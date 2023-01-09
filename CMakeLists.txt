@@ -5,10 +5,8 @@ set(CMAKE_C_STANDARD 99)
 
 ############################# SOURCE #############################
 
-set(FDIR Foundation)
-
-set(FSOURCE ${FDIR}/Directory.c)
-set(SOURCE decodeCommand.c)
+set(FSOURCE Foundation/directory.c Foundation/Array/String/StringArray.c Foundation/Array/String/StringArray.h)
+set(SOURCE decodeCommand.c Foundation/Array/String/StringArray.c Foundation/Array/String/StringArray.h)
 
 ############################# LIBRARY #############################
 
@@ -20,4 +18,4 @@ add_executable(ContigDifference main.c)
 
 ############################# LINK LIBRARY #############################
 
-link_libraries(ContigDifference ${code})
+target_link_libraries(ContigDifference code)

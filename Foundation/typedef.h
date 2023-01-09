@@ -11,7 +11,7 @@
 #define ASSERT(expr, msg)                                           \
     do {                                                            \
         if (!(expr)) {                                              \
-            printf("%s: %s (ligne: %d)\n", #expr, msg, __LINE__);    \
+            printf("%s: %s (ligne: %d)\n", #expr, msg, __LINE__);   \
             abort();                                                \
         }                                                           \
     } while(0);

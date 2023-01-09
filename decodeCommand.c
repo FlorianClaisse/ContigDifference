@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "Foundation/Directory.h"
+#include "Foundation/directory.h"
 #include "decodeCommand.h"
 
 #define INPUTA "--inputA"
@@ -15,14 +15,29 @@
 #define COMMON "--common"
 
 ProgrammeOption* init(cstring inputA, cstring inputB, cstring output, bool reverse, bool common) {
-    if (!directoryExists(inputA)) { return NULL; }
-    if (!directoryExists(inputB)) { return NULL; }
-    if (!directoryExists(output) && createDirectory(output) == -1) { return NULL; }
+    if (!directoryExists(inputA)) {
+        printf("Le dossier %s n'existe pas.\n", inputA);
+        return NULL;
+    }
+    if (!directoryExists(inputB)) {
+        printf("Le dossier %s n'existe pas.\n", inputB);
+        return NULL;
+    }
+    if (!directoryExists(output) && createDirectory(output) == -1) {
+        printf("Impossible de créer le dossier %s.\n", output);
+        return NULL;
+    }
 
     ProgrammeOption* programmeOption = malloc(sizeof(ProgrammeOption));
     ASSERT(programmeOption != NULL, "Impossible d'allouer de la mémoire.")
 
-    return NULL;
+    programmeOption->pathA = inputA;
+    programmeOption->pathB = inputB;
+    programmeOption->pathOutput = output;
+    programmeOption->reverse = reverse;
+    programmeOption->common = common;
+
+    return programmeOption;
 }
 
 ProgrammeOption* decodeCommand(int argc, cstring argv[]) {
@@ -54,5 +69,14 @@ ProgrammeOption* decodeCommand(int argc, cstring argv[]) {
 }
 
 void usage() {
-
+    printf("NAME\n");
+    printf("\tContigDifference\n");
+    printf("\nSYNOPSIS\n");
+    printf("\tContigDifference %s <path> %s <path> %s <path> [%s] [%s]\n", INPUTA, INPUTB, OUTPUT, REVERSE, COMMON);
+    printf("\nDESCRIPTION\n");
+    printf("\t%s <path>\t\tLe chemin vers le dossier A.\n", INPUTA);
+    printf("\n\t%s <path>\t\tLe chemin vers le dossier B.\n", INPUTB);
+    printf("\n\t%s <path>\t\tLe chemin vers le dossier de sortie celui-ci peut ne pas exister il sera crée.\n", OUTPUT);
+    printf("\n\t%s\t\tCette option permet d'appliquer le programme une seconde fois en inversant l'ordre des dossier A et B\n", REVERSE);
+    printf("\n\t%s\t\tCette option permet de spécifier que l'on veut les chaines commune présente dans tous le dossier A.\n", COMMON);
 }

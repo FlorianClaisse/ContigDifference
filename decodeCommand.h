@@ -13,9 +13,9 @@
  * La structure qui stocke toutes les options passé en ligne de commande.
  */
 typedef struct {
-    string pahtA; // Le chemin vers le dossier A.
-    string pathB; // Le chement vers le dossier B.
-    string pathOutput; // Le chemin vers le dossier de sortie.
+    cstring pathA; // Le chemin vers le dossier A.
+    cstring pathB; // Le chement vers le dossier B.
+    cstring pathOutput; // Le chemin vers le dossier de sortie.
     bool reverse; // L'option reverse ou non.
     bool common; // L'option common ou non.
 } ProgrammeOption;
