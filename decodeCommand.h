@@ -16,6 +16,7 @@ typedef struct {
     cstring pathA; // Le chemin vers le dossier A.
     cstring pathB; // Le chement vers le dossier B.
     cstring pathOutput; // Le chemin vers le dossier de sortie.
+    ulong minimumSize; // La taille minimum des contigs a prendre en compte.
     bool reverse; // L'option reverse ou non.
     bool common; // L'option common ou non.
 } ProgrammeOption;
