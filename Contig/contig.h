@@ -1,14 +1,18 @@
+//
+// Created by Florian Claisse on 10/01/2023.
+//
+
 #ifndef CONTIGDIFFERENCE_CONTIG_H
 #define CONTIGDIFFERENCE_CONTIG_H
 
-#include "Foundation/Array/String/StringArray.h"
-#include "Foundation/typedef.h"
+#include "../Utils/typedef.h"
+#include "../Utils/String/String.h"
 
-/**
- * Permet de trouver tous les mots commun a partie d'un fichier et d'une multitude d'autre fichiers.
- * @param allFiles Tous les fichiers.
- * @return La liste des mots commun trouvé.
-*/
-StringArray* findCommon(StringArray *allfiles);
+typedef struct {
+    cstring id;
+    String *chaine;
+} Contig;
 
-#endif
+Contig** Contig_decoder(cstring file_path);
+
+#endif //CONTIGDIFFERENCE_CONTIG_H

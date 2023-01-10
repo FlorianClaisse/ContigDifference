@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "Foundation/directory.h"
+#include "Utils/directory.h"
 #include "decodeCommand.h"
 
 #define INPUTA "--inputA"

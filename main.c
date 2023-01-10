@@ -2,8 +2,8 @@
 #include <string.h>
 #include <dirent.h>
 
-#include "Foundation/directory.h"
-#include "Foundation/Array/String/StringArray.h"
+#include "Utils/directory.h"
+#include "Utils/Array/String/StringArray.h"
 #include "decodeCommand.h"
 
 // ./contigdiff --inputA /Users/... --inputB /Users/.. --output /Users/... --mininmum <value> [--reverse] [--common]
@@ -21,7 +21,7 @@ int main(int argc, const char* argv[]) {
     StringArray *filesA = findFiles(programmeOption->pathA, "fasta");
     StringArray *filesB = findFiles(programmeOption->pathB, "fasta");
 
-    // Trouver tous les mots commun a A.
+    // Decoder tous les fichiers de A. (Pour tester)
 
 
     return EXIT_SUCCESS;

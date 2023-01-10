@@ -7,7 +7,7 @@
 
 #include <stdbool.h>
 
-#include "Foundation/typedef.h"
+#include "Utils/typedef.h"
 
 /**
  * La structure qui stocke toutes les options passé en ligne de commande.

@@ -1,10 +1,13 @@
-#include <pthread.h>
+//
+// Created by Florian Claisse on 10/01/2023.
+//
 
 #include "contig.h"
 
+#define BUFFER_SIZE 4096
 
-StringArray* findCommon(StringArray *allfiles) {
+Contig** Contig_decoder(cstring file_path) {
+    char buffer[BUFFER_SIZE];
 
-    string firstFile = SA_get(0, allfiles);
-    
+    while ( ())
 }
